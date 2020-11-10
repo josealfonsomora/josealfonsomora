@@ -20,5 +20,7 @@ lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen
 
 ```
 adb tcpip 5555
+adb shell "ip addr show wlan0 | grep -e wlan0$ | cut -d\" \" -f 6 | cut -d/ -f 1"  // to obtain the phone's IP address
 adb connect <Android_device_id>:5555
+adb connect <ip_address>:5555
 ```
