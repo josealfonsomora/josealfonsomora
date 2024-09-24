@@ -1,5 +1,5 @@
 # Jose Alfonso Mora
-### Android Tech Lead at [Zego](https://www.zego.com/)
+### Senior Android Engineer at [Zego](https://www.zego.com/)
 
 ### Git Alias
 
@@ -13,6 +13,13 @@ git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(ye
 
 ```
 git config --global alias.squash '!f(){ git reset --soft HEAD~${1} && git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})";};f'
+```
+
+#### Clean
+Remove all git branches but main
+
+```
+git config --global alias.nuke "!git branch | grep -v 'main' | xargs git branch -D"
 ```
 
 ### ADB commands
