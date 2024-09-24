@@ -1,25 +1,14 @@
 # Jose Alfonso Mora
 ### Senior Android Engineer at [Zego](https://www.zego.com/)
 
-### Git Alias
-
-#### Log
+#### Git Alias
 
 ```
-git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-```
-
-#### Squash
-
-```
-git config --global alias.squash '!f(){ git reset --soft HEAD~${1} && git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})";};f'
-```
-
-#### Clean
-Remove all git branches but main
-
-```
-git config --global alias.nuke "!git branch | grep -v 'main' | xargs git branch -D"
+[alias]
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen%ad %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+        squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\";};f"
+        tags = !git fetch origin --tags --force && git lg
+        nuke = "!git branch | grep -v 'main' | xargs git branch -D"
 ```
 
 ### ADB commands
